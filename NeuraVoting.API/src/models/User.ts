@@ -23,6 +23,12 @@ export class User {
     @Column({ length: 50 })
     lastName!: string;
 
+    @Column({ length: 50, unique: true, nullable: true })
+    governmentId!: string;
+
+    @Column({ length: 30, default: 'Pending Verification' })
+    verificationStatus!: string;
+
     @CreateDateColumn()
     createdAt!: Date;
 

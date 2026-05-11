@@ -16,6 +16,8 @@ CREATE TABLE Users (
     role VARCHAR(20) NOT NULL CHECK (role IN ('Admin', 'Voter')),
     firstName VARCHAR(50) NOT NULL,
     lastName VARCHAR(50) NOT NULL,
+    governmentId VARCHAR(50) UNIQUE,
+    verificationStatus VARCHAR(30) NOT NULL DEFAULT 'Pending Verification',
     createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     isActive BOOLEAN NOT NULL DEFAULT TRUE
 );
